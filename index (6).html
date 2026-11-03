@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPORTLINE® | Pro Sports Gear &amp; Tournament Equipment</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0e0e0e;
+    --bg-2: #131313;
+    --surface: #1c1b1b;
+    --surface-2: #201f1f;
+    --surface-3: #2a2a2a;
+    --surface-4: #353534;
+    --red: #ff544b;
+    --red-dark: #5c0005;
+    --green: #41e575;
+    --green-btn: #06c85d;
+    --green-dark: #004d1f;
+    --text: #e5e2e1;
+    --text-2: #c6c6c7;
+    --text-3: #af8783;
+    --text-4: #e9bcb7;
+    --display: 'Bebas Neue', 'Impact', sans-serif;
+    --body: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--body);
+    font-size: 14px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+
+  .section { padding: 64px 48px; position: relative; overflow: hidden; }
+  .container { max-width: 1440px; margin: 0 auto; position: relative; }
+
+  .eyebrow {
+    font-size: 10px; font-weight: 800; letter-spacing: 1.4px;
+    text-transform: uppercase; color: var(--red);
+  }
+  .h1, .h2 {
+    font-family: var(--display); font-weight: 400;
+    text-transform: uppercase; color: var(--text); line-height: 1;
+  }
+  .h1 { font-size: 96px; letter-spacing: -2.4px; }
+  .h2 { font-size: 64px; letter-spacing: -1.6px; }
+  .h3 {
+    font-weight: 800; font-size: 22px; text-transform: uppercase;
+    color: var(--text); line-height: 1.25; letter-spacing: -0.2px;
+  }
+  .h3-sm { font-weight: 700; font-size: 18px; text-transform: uppercase; color: var(--text); line-height: 1.33; }
+  .lead { color: var(--text-2); font-size: 14px; line-height: 22px; }
+  .muted { color: var(--text-2); }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    padding: 16px 32px; border-radius: 4px; border: 0; cursor: pointer;
+    font-family: var(--body); font-weight: 800; font-size: 13px;
+    letter-spacing: 0.65px; text-transform: uppercase; transition: transform .15s, opacity .15s;
+  }
+  .btn:hover { transform: translateY(-1px); opacity: .92; }
+  .btn-red { background: var(--red); color: var(--red-dark); box-shadow: 0 8px 12px rgba(255,84,75,.35); }
+  .btn-dark { background: var(--surface-3); color: var(--green); }
+  .btn-green { background: var(--green-btn); color: var(--green-dark); box-shadow: 0 4px 10px rgba(6,200,93,.3); width: 100%; }
+  .btn-outline { background: transparent; color: var(--text); border: 1px solid #4a4545; }
+  .btn-sm {
+    padding: 10px 20px; font-size: 10px; letter-spacing: 1.4px;
+    background: var(--surface-4); color: var(--text); width: 100%;
+  }
+  .btn-sm.wa { color: var(--text); }
+
+  .badge {
+    display: inline-block; padding: 4px 10px; border-radius: 2px;
+    font-size: 10px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase;
+  }
+  .badge-red { background: var(--red); color: var(--red-dark); }
+  .badge-green { background: var(--green-btn); color: var(--green-dark); }
+  .badge-grey { background: #3a3939; color: var(--text); }
+  .badge-glass {
+    position: absolute; top: 12px; right: 12px;
+    background: rgba(14,14,14,.8); backdrop-filter: blur(8px);
+    color: var(--text); font-size: 10px; font-weight: 800; letter-spacing: 1.4px;
+    padding: 2px 8px; border-radius: 4px;
+  }
+  .badge-left { position: absolute; top: 12px; left: 12px; }
+
+  /* Placeholder for product/hero photography (Figma image links are temporary) */
+  .photo {
+    position: relative; width: 100%; height: 260px; border-radius: 4px; overflow: hidden;
+    background: linear-gradient(135deg, #2a2a2a 0%, #151515 60%, #3a1412 100%);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .photo span {
+    font-size: 10px; letter-spacing: 1.4px; color: var(--text-3); text-transform: uppercase; font-weight: 700;
+  }
+
+  /* Icon square */
+  .icon-box {
+    width: 48px; height: 48px; border-radius: 4px; background: var(--surface-2);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    font-size: 20px;
+  }
+  .icon-circle {
+    width: 64px; height: 64px; border-radius: 9999px; background: var(--surface-2);
+    display: flex; align-items: center; justify-content: center; font-size: 24px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,.05);
+  }
+
+  .stars { color: var(--red); letter-spacing: 2px; font-size: 11px; }
+  .rating-row { display: flex; align-items: center; gap: 6px; font-size: 10px; font-weight: 800; letter-spacing: 1.4px; color: var(--text-2); }
+
+  /* ========== TICKER ========== */
+  .ticker { background: var(--surface-2); padding: 12px 16px; overflow: hidden; }
+  .ticker-inner {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 0 32px;
+    font-size: 10px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--text);
+  }
+  .ticker-inner .dot { color: var(--text-3); }
+  .ticker-inner .ico { color: var(--red); }
+  .ticker-inner .ico.green { color: var(--green); }
+
+  /* ========== HERO ========== */
+  .hero {
+    background: var(--bg); padding: 64px 48px;
+    min-height: 736px; display: flex; align-items: center;
+  }
+  .hero::before, .hero::after {
+    content: ""; position: absolute; border-radius: 9999px; pointer-events: none;
+  }
+  .hero::before {
+    width: 550px; height: 550px; top: -128px; right: 0;
+    background: rgba(255,84,75,.1); filter: blur(140px);
+  }
+  .hero::after {
+    width: 400px; height: 400px; bottom: 0; left: 25%;
+    background: rgba(6,200,93,.05); filter: blur(160px);
+  }
+  .hero-grid {
+    display: grid; grid-template-columns: repeat(12, minmax(0,1fr)); gap: 24px;
+    align-items: center; position: relative; z-index: 1;
+  }
+  .hero-left { grid-column: 1 / span 7; }
+  .hero-right { grid-column: 8 / span 5; }
+  .pill {
+    display: inline-flex; align-items: center; gap: 8px; background: var(--surface);
+    padding: 6px 12px; border-radius: 9999px;
+  }
+  .pill .dot { width: 10px; height: 10px; border-radius: 9999px; background: var(--red); }
+  .hero-title { margin-top: 24px; }
+  .hero-title .accent { color: var(--red); }
+  .hero-sub {
+    font-family: var(--display); font-size: 44px; letter-spacing: 2.2px;
+    color: var(--text-4); text-transform: uppercase; margin-top: 8px; line-height: 1;
+  }
+  .hero-desc { margin-top: 24px; max-width: 576px; font-weight: 500; font-size: 16px; line-height: 26px; color: var(--text-2); }
+  .hero-ctas { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 16px; }
+  .metrics { margin-top: 24px; display: flex; gap: 8px; }
+  .metric {
+    flex: 1; background: var(--surface); padding: 8px; border-radius: 4px;
+  }
+  .metric .num { font-family: var(--display); font-size: 28px; color: var(--text); line-height: 1.1; }
+  .metric .lbl { font-size: 10px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; color: var(--text-2); }
+  .hero-visual {
+    position: relative; height: 599px; border-radius: 4px; overflow: hidden;
+    background: linear-gradient(160deg, #1c2a33 0%, #0e0e0e 45%, #3a1412 100%);
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,.25);
+  }
+  .hero-visual .photo { position: absolute; inset: 0; height: 100%; border-radius: 0; }
+  .hero-visual .gradient {
+    position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(to top, #0e0e0e 0%, rgba(14,14,14,0) 60%);
+  }
+  .hero-tag {
+    position: absolute; top: 16px; right: 16px; background: rgba(14,14,14,.9);
+    backdrop-filter: blur(8px); padding: 6px 12px; border-radius: 4px;
+    display: flex; align-items: center; gap: 8px;
+    font-size: 10px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase;
+  }
+  .hero-tag .live { width: 8px; height: 8px; border-radius: 9999px; background: var(--green); }
+  .hero-card {
+    position: absolute; left: 24px; right: 24px; bottom: 24px;
+    background: rgba(32,31,31,.95); backdrop-filter: blur(8px);
+    padding: 16px; border-radius: 4px; display: flex; flex-direction: column; gap: 8px;
+  }
+  .hero-card .row { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+  .hero-card .small { font-size: 10px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; }
+  .hero-card .title { font-weight: 700; font-size: 18px; text-transform: uppercase; color: var(--text); line-height: 1.35; }
+  .hero-card .desc { font-size: 14px; color: var(--text-2); }
+  .hero-card .chat { color: var(--green); }
+
+  /* ========== FEATURED PRODUCTS ========== */
+  .featured-head {
+    display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap;
+  }
+  .featured-head .bar { display: flex; align-items: center; gap: 8px; }
+  .featured-head .bar i { display: block; width: 32px; height: 4px; background: var(--red); }
+  .stack-4 { display: flex; flex-direction: column; gap: 4px; }
+  .link-pill {
+    background: var(--surface-3); padding: 10px 20px; border-radius: 4px;
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 10px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase;
+  }
+  .bento {
+    display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 24px; margin-top: 40px;
+  }
+  .card {
+    background: var(--surface); border-radius: 4px; padding: 16px;
+    display: flex; flex-direction: column; justify-content: space-between; gap: 16px;
+    position: relative;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -2px rgba(0,0,0,.1);
+  }
+  .card .photo-wrap { position: relative; }
+  .card .body { display: flex; flex-direction: column; gap: 4px; }
+  .card .name { margin-top: 4px; }
+  .card .desc { font-size: 14px; color: var(--text-2); line-height: 22px; }
+  .card .price-row { position: relative; display: flex; align-items: flex-end; gap: 12px; height: 30px; }
+  .card .price { font-family: var(--display); font-size: 28px; color: var(--text); letter-spacing: .56px; line-height: 30px; }
+  .card .was { font-size: 14px; color: var(--text-3); text-decoration: line-through; }
+  .card .note { font-size: 10px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; color: var(--green); margin-left: auto; align-self: center; }
+  .card .note.red { color: var(--red); }
+  .card .note.grey { color: var(--text-2); }
+  .card .price-block { display: flex; flex-direction: column; gap: 8px; padding-top: 16px; }
+  .card .btn-row { width: 100%; }
+
+  /* ========== CATEGORY SECTIONS ========== */
+  .cat-head {
+    display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap;
+  }
+  .cat-head .txt { display: flex; flex-direction: column; gap: 4px; max-width: 790px; }
+  .cat-head .sub { color: var(--text-2); font-size: 14px; margin-top: 4px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 24px; margin-top: 40px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 24px; margin-top: 40px; }
+  .grid-5 { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 16px; margin-top: 40px; }
+  .tile {
+    background: var(--surface); border-radius: 4px; padding: 24px;
+    display: flex; flex-direction: column; gap: 16px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  }
+  .tile .spec {
+    font-size: 10px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; color: var(--text-4);
+  }
+  .tile .spec-box {
+    margin-top: auto; background: var(--surface-2); padding: 10px; border-radius: 4px;
+    font-size: 10px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; color: var(--text-2);
+  }
+  .tile .body { font-size: 14px; color: var(--text-2); line-height: 22px; }
+
+  .cricket-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 24px; margin-top: 40px; }
+  .workshop {
+    margin-top: 24px; background: var(--surface-2); padding: 24px; border-radius: 4px;
+    display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap;
+  }
+  .workshop .left { display: flex; gap: 16px; align-items: center; }
+  .workshop .txt { display: flex; flex-direction: column; gap: 0; }
+  .workshop .h4 { font-weight: 800; font-size: 22px; text-transform: uppercase; color: var(--text); letter-spacing: -.2px; line-height: 28px; }
+  .workshop .p { color: var(--text-2); font-size: 14px; line-height: 22px; }
+  .workshop .btn-mini {
+    background: var(--surface-4); padding: 12px 24px; border-radius: 4px;
+    font-size: 10px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; color: var(--text);
+  }
+
+  .badminton-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 24px; margin-top: 40px; }
+  .b-card {
+    background: var(--surface); border-radius: 4px; padding: 16px;
+    display: flex; flex-direction: column; justify-content: space-between; gap: 16px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  }
+  .b-card .tag { font-size: 10px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; }
+  .b-card .title { margin-top: 4px; }
+  .b-card .body { color: var(--text-2); font-size: 14px; line-height: 22px; margin-top: 4px; }
+  .b-card .spec-box {
+    background: var(--surface-2); padding: 10px; border-radius: 4px;
+    font-size: 10px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; color: var(--text-2);
+  }
+
+  .sport-grid { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 16px; margin-top: 40px; }
+
+  /* ========== PROMO ========== */
+  .promo-wrap {
+    background: linear-gradient(90deg, #201f1f, #1c1b1b);
+    border-radius: 8px; padding: 64px; position: relative; overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,.25);
+  }
+  .promo-wrap::after {
+    content: ""; position: absolute; width: 384px; height: 384px; right: -80px; bottom: -80px;
+    background: rgba(255,84,75,.2); border-radius: 9999px; filter: blur(64px); pointer-events: none;
+  }
+  .promo-content { max-width: 768px; display: flex; flex-direction: column; gap: 16px; position: relative; z-index: 1; }
+  .promo-tag {
+    display: inline-flex; align-self: flex-start; padding: 4px 12px; background: var(--red);
+    color: var(--red-dark); font-size: 10px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; border-radius: 2px;
+  }
+  .promo-title { font-size: 96px; letter-spacing: 3.84px; line-height: 92px; }
+  .promo-desc { font-weight: 500; font-size: 16px; line-height: 26px; color: var(--text-2); }
+  .promo-ctas { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 8px; }
+
+  /* ========== WHY CHOOSE ========== */
+  .why-head { display: flex; flex-direction: column; align-items: center; gap: 8px; max-width: 672px; margin: 0 auto; text-align: center; }
+  .why-head .h2 { text-align: center; font-size: 64px; }
+  .pillars { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 24px; margin-top: 40px; }
+  .pillar {
+    background: var(--surface); border-radius: 4px; padding: 24px;
+    display: flex; flex-direction: column; align-items: center; text-align: center; gap: 16px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+  }
+  .pillar .p { color: var(--text-2); font-size: 14px; line-height: 22px; }
+
+  /* ========== CONTACT / ENQUIRY ========== */
+  .contact-grid { display: grid; grid-template-columns: repeat(12, minmax(0,1fr)); gap: 24px; }
+  .enquiry {
+    grid-column: 1 / span 7; background: var(--surface-2); border-radius: 4px; padding: 40px;
+    display: flex; flex-direction: column; gap: 24px; position: relative;
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,.1), 0 8px 10px -6px rgba(0,0,0,.1);
+  }
+  .concierge {
+    grid-column: 8 / span 5; background: var(--surface); border-radius: 4px; padding: 40px;
+    display: flex; flex-direction: column; justify-content: space-between; gap: 24px; position: relative;
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,.1), 0 8px 10px -6px rgba(0,0,0,.1);
+  }
+  .enq-head { display: flex; flex-direction: column; gap: 4px; }
+  .enq-head .eyebrow.green { color: var(--green); }
+  .enq-head .h3-big {
+    font-family: var(--display); font-size: 44px; letter-spacing: .88px; text-transform: uppercase; color: var(--text); line-height: 44px;
+  }
+  .enq-head p { color: var(--text-2); font-size: 14px; line-height: 22px; }
+
+  form.enquiry-form { display: flex; flex-direction: column; gap: 16px; }
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  .field label {
+    font-size: 10px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; color: var(--text-2);
+  }
+  .field input {
+    width: 100%; background: var(--surface); border: 1px solid transparent; border-radius: 4px;
+    padding: 14px 16px; color: var(--text); font-family: var(--body); font-size: 14px; outline: none;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,.05);
+  }
+  .field input::placeholder { color: var(--text-3); }
+  .field input:focus { border-color: var(--red); }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-msg {
+    font-size: 13px; font-weight: 700; padding: 0; min-height: 0; border-radius: 4px;
+  }
+  .form-msg.ok { padding: 12px 16px; background: rgba(65,229,117,.12); color: var(--green); }
+  .form-msg.err { padding: 12px 16px; background: rgba(255,84,75,.12); color: var(--red); }
+  .btn-submit[disabled] { opacity: .6; cursor: default; }
+
+  .c-title { font-family: var(--display); font-size: 36px; letter-spacing: .4px; text-transform: uppercase; color: var(--text); line-height: 1.05; }
+  .c-list { display: flex; flex-direction: column; gap: 16px; padding-top: 8px; }
+  .c-item { display: flex; gap: 12px; align-items: flex-start; }
+  .c-item .ico { font-size: 18px; width: 22px; text-align: center; margin-top: 2px; }
+  .c-label { font-size: 10px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; color: var(--text-2); }
+  .c-value { font-family: var(--display); font-size: 28px; letter-spacing: .56px; color: var(--text); line-height: 30px; }
+  .c-text { font-size: 14px; color: var(--text); line-height: 22px; }
+  .c-note { font-size: 10px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; color: var(--green); padding-top: 4px; }
+  .socials { margin-top: 24px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,.04); }
+  .socials .lbl { font-size: 10px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--text-3); }
+  .social-row { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+  .social {
+    background: var(--surface-2); padding: 8px 16px; border-radius: 4px;
+    font-size: 10px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; color: var(--text);
+  }
+  .social.green { color: var(--green); }
+
+  /* ========== RESPONSIVE ========== */
+  @media (max-width: 1200px) {
+    .h1 { font-size: 80px; }
+    .h2 { font-size: 52px; }
+    .promo-title { font-size: 72px; line-height: 72px; }
+    .bento { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .grid-4 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .grid-5 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+    .sport-grid { grid-template-columns: repeat(3, minmax(0,1fr)); }
+    .badminton-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .pillars { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  }
+  @media (max-width: 900px) {
+    .section { padding: 48px 20px; }
+    .hero { padding: 48px 20px; min-height: auto; }
+    .hero-left, .hero-right, .enquiry, .concierge { grid-column: 1 / -1; }
+    .hero-visual { height: 480px; }
+    .h1 { font-size: 64px; letter-spacing: -1.6px; }
+    .h2 { font-size: 44px; letter-spacing: -1px; }
+    .cricket-grid, .grid-3 { grid-template-columns: 1fr; }
+    .promo-wrap { padding: 36px 24px; }
+    .promo-title { font-size: 56px; line-height: 58px; letter-spacing: 1px; }
+    .bento { grid-template-columns: 1fr; }
+    .grid-5, .sport-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .enquiry, .concierge { padding: 24px; }
+    .enq-head .h3-big { font-size: 36px; line-height: 38px; }
+  }
+  @media (max-width: 600px) {
+    .h1 { font-size: 52px; }
+    .h2 { font-size: 38px; }
+    .metrics { flex-wrap: wrap; }
+    .metric { flex: 1 1 45%; }
+    .grid-4, .grid-5, .sport-grid, .badminton-grid, .pillars { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .promo-title { font-size: 44px; line-height: 46px; }
+    .hero-visual { height: 420px; }
+    .photo { height: 200px; }
+    .btn { padding: 14px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ FLASH TICKER (Figma: Section - HIGH VELOCITY FLASH TICKER) ============ -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span><span class="ico">🏏</span>&nbsp; Grade 1 English willow bats available</span>
+    <span class="dot">•</span>
+    <span><span class="ico">🏸</span>&nbsp; 100% original Yonex &amp; Li-Ning racquets</span>
+    <span class="dot">•</span>
+    <span><span class="ico green">🏃</span>&nbsp; Pro-Dry SportFlex™ compression apparel</span>
+    <span class="dot">•</span>
+    <span><span class="ico">💬</span>&nbsp; Instant advice on WhatsApp +91 96770 56668</span>
+  </div>
+</div>
+
+<!-- ============ HERO (Figma: Section - HERO SECTION) ============ -->
+<section class="hero" id="top">
+  <div class="container hero-grid">
+    <div class="hero-left">
+      <div class="pill">
+        <span class="dot"></span>
+        <span class="eyebrow" style="color: var(--text);">Official Tournament Gear Vault</span>
+      </div>
+
+      <div class="hero-title">
+        <h1 class="h1">Unleash your <span class="accent">PEAK</span><br>PERFORMANCE</h1>
+      </div>
+      <div class="hero-sub">"Say I can..."</div>
+
+      <p class="hero-desc">Engineered for decisive victory. Tournament-grade English willow cricket bats, aerodynamic carbon badminton racquets, precision court footwear, and thermal compression wear vetted by championship athletes.</p>
+
+      <div class="hero-ctas">
+        <a href="#featured" class="btn btn-red">Explore Collections</a>
+        <a href="https://wa.me/919677056668" target="_blank" rel="noopener" class="btn btn-dark">💬 Shop on WhatsApp</a>
+      </div>
+
+      <div class="metrics">
+        <div class="metric"><div class="num">15,000+</div><div class="lbl">Athletes equipped</div></div>
+        <div class="metric"><div class="num" style="color: var(--red);">100%</div><div class="lbl">Genuine gear</div></div>
+        <div class="metric"><div class="num">4.9/5</div><div class="lbl">Athlete rating</div></div>
+        <div class="metric"><div class="num" style="color: var(--green);">&lt; 30 MIN</div><div class="lbl">WhatsApp dispatch</div></div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-visual">
+        <div class="photo"><span>Hero photo: add image here</span></div>
+        <div class="gradient"></div>
+        <div class="hero-tag"><span class="live"></span>Pro Workshop Online</div>
+        <div class="hero-card">
+          <div class="row">
+            <span class="small" style="color: var(--red);">Pro Lab Rig</span>
+            <span class="small" style="color: var(--green);">30 LBS Tension Ready</span>
+          </div>
+          <div class="title">Custom precision stringing &amp; bat balancing</div>
+          <div class="row">
+            <span class="desc">Direct artisan workbench consultation</span>
+            <span class="small chat">Chat →</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURED PRODUCTS (Figma: Section - FEATURED PRODUCTS SHOWCASE) ============ -->
+<section class="section" id="featured" style="background: var(--bg-2);">
+  <div class="container">
+    <div class="featured-head">
+      <div class="stack-4">
+        <div class="bar"><i></i><span class="eyebrow">Tournament Certified</span></div>
+        <h2 class="h2">Flagship Speed Vault</h2>
+        <p class="lead" style="margin-top: 4px;">Direct order and specification verification via instant WhatsApp athletic concierge.</p>
+      </div>
+      <a href="#" class="link-pill">Get full PDF catalog ↓</a>
+    </div>
+
+    <div class="bento">
+      <!-- Product 1 -->
+      <article class="card">
+        <div>
+          <div class="photo-wrap">
+            <div class="photo"><span>Product photo</span></div>
+            <span class="badge badge-red badge-left">Bestseller</span>
+            <span class="badge-glass">Grade 1+</span>
+          </div>
+          <div class="body" style="margin-top: 16px;">
+            <div class="rating-row"><span class="stars">★★★★★</span> (128)</div>
+            <h3 class="h3-sm name">Sportline Apex Grade 1 Willow Bat</h3>
+            <p class="desc">Custom 40mm edges, balanced mid-swell profile, factory pre-knocked with toe shield.</p>
+          </div>
+        </div>
+        <div class="price-block">
+          <div class="price-row">
+            <span class="price">₹14,499</span>
+            <span class="was">₹18,999</span>
+            <span class="note">In stock (Indore/BLR)</span>
+          </div>
+          <a href="https://wa.me/919677056668?text=Enquiry:%20Apex%20Grade%201%20Willow%20Bat" target="_blank" rel="noopener" class="btn btn-sm">💬 Enquire on WhatsApp</a>
+        </div>
+      </article>
+
+      <!-- Product 2 -->
+      <article class="card">
+        <div>
+          <div class="photo-wrap">
+            <div class="photo"><span>Product photo</span></div>
+            <span class="badge badge-green badge-left">Tournament ready</span>
+            <span class="badge-glass">4U / G5</span>
+          </div>
+          <div class="body" style="margin-top: 16px;">
+            <div class="rating-row"><span class="stars">★★★★★</span> (94)</div>
+            <h3 class="h3-sm name">Aerostrike Pro Carbon Badminton Racket</h3>
+            <p class="desc">Full high-modulus graphite frame, 30 lbs digital string capability, ultra-fast swing speed.</p>
+          </div>
+        </div>
+        <div class="price-block">
+          <div class="price-row">
+            <span class="price">₹5,899</span>
+            <span class="was">₹7,499</span>
+            <span class="note">Free stringing</span>
+          </div>
+          <a href="https://wa.me/919677056668?text=Enquiry:%20Aerostrike%20Pro%20Carbon%20Racket" target="_blank" rel="noopener" class="btn btn-sm">💬 Enquire on WhatsApp</a>
+        </div>
+      </article>
+
+      <!-- Product 3 -->
+      <article class="card">
+        <div>
+          <div class="photo-wrap">
+            <div class="photo"><span>Product photo</span></div>
+            <span class="badge badge-red badge-left">New arrival</span>
+            <span class="badge-glass">SportFlex™</span>
+          </div>
+          <div class="body" style="margin-top: 16px;">
+            <div class="rating-row"><span class="stars">★★★★★</span> (52)</div>
+            <h3 class="h3-sm name">Thermoshield Pro Compression Tracksuit</h3>
+            <p class="desc">Quick-dry thermal regulation weave with anti-odor silver ion fabric. Full upper &amp; lower pair.</p>
+          </div>
+        </div>
+        <div class="price-block">
+          <div class="price-row">
+            <span class="price">₹2,999</span>
+            <span class="was">₹4,200</span>
+            <span class="note grey">Sizes S – 3XL</span>
+          </div>
+          <a href="https://wa.me/919677056668?text=Enquiry:%20Thermoshield%20Tracksuit" target="_blank" rel="noopener" class="btn btn-sm">💬 Enquire on WhatsApp</a>
+        </div>
+      </article>
+
+      <!-- Product 4 -->
+      <article class="card">
+        <div>
+          <div class="photo-wrap">
+            <div class="photo"><span>Product photo</span></div>
+            <span class="badge badge-red badge-left">Hot deal</span>
+            <span class="badge-glass">Turf &amp; Run</span>
+          </div>
+          <div class="body" style="margin-top: 16px;">
+            <div class="rating-row"><span class="stars">★★★★★</span> (210)</div>
+            <h3 class="h3-sm name">Speedvapor Lightweight Turf Shoes</h3>
+            <p class="desc">Multi-directional micro stud outsole for astroturf cricket, field hockey, and sprint drills.</p>
+          </div>
+        </div>
+        <div class="price-block">
+          <div class="price-row">
+            <span class="price">₹4,299</span>
+            <span class="was">₹5,999</span>
+            <span class="note">EU 40 – 46 ready</span>
+          </div>
+          <a href="https://wa.me/919677056668?text=Enquiry:%20Speedvapor%20Turf%20Shoes" target="_blank" rel="noopener" class="btn btn-sm">💬 Enquire on WhatsApp</a>
+        </div>
+      </article>
+
+      <!-- Product 5 -->
+      <article class="card">
+        <div>
+          <div class="photo-wrap">
+            <div class="photo"><span>Product photo</span></div>
+            <span class="badge badge-grey badge-left">Elite kit</span>
+            <span class="badge-glass">Test level</span>
+          </div>
+          <div class="body" style="margin-top: 16px;">
+            <div class="rating-row"><span class="stars">★★★★★</span> (81)</div>
+            <h3 class="h3-sm name">Titanium Pro Batting Pads &amp; Gloves Combo</h3>
+            <p class="desc">Ultra-light high-density molded shin bolsters paired with Pittards leather palm impact gloves.</p>
+          </div>
+        </div>
+        <div class="price-block">
+          <div class="price-row">
+            <span class="price">₹4,750</span>
+            <span class="was">₹6,800</span>
+            <span class="note red">Combo saver</span>
+          </div>
+          <a href="https://wa.me/919677056668?text=Enquiry:%20Titanium%20Pads%20%26%20Gloves%20Combo" target="_blank" rel="noopener" class="btn btn-sm">💬 Enquire on WhatsApp</a>
+        </div>
+      </article>
+
+      <!-- Product 6 -->
+      <article class="card">
+        <div>
+          <div class="photo-wrap">
+            <div class="photo"><span>Product photo</span></div>
+            <span class="badge badge-green badge-left">Club choice</span>
+            <span class="badge-glass">Speed 77</span>
+          </div>
+          <div class="body" style="margin-top: 16px;">
+            <div class="rating-row"><span class="stars">★★★★★</span> (440)</div>
+            <h3 class="h3-sm name">Featherspeed 77 Pro Shuttlecocks (12pk)</h3>
+            <p class="desc">Selected natural goose feathers with solid Portuguese composite cork base for stable trajectory.</p>
+          </div>
+        </div>
+        <div class="price-block">
+          <div class="price-row">
+            <span class="price">₹1,650</span>
+            <span class="was">₹2,200</span>
+            <span class="note">Bulk slots on WhatsApp</span>
+          </div>
+          <a href="https://wa.me/919677056668?text=Enquiry:%20Featherspeed%2077%20Shuttlecocks" target="_blank" rel="noopener" class="btn btn-sm">💬 Enquire on WhatsApp</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CATEGORY 1: CRICKET (Figma: Section - CATEGORY BREAKDOWN 1: CRICKET GEAR ZONE) ============ -->
+<section class="section" style="background: var(--bg);">
+  <div class="container">
+    <div class="cat-head">
+      <div class="txt">
+        <span class="eyebrow">Crease Dominance</span>
+        <h2 class="h2">Engineered for the crease: cricket gear</h2>
+        <p class="sub">Tested against 145km/h bowling speeds. Bats, protective guards, and leather seam balls calibrated for Indian pitches.</p>
+      </div>
+      <a href="https://wa.me/919677056668?text=Enquiry:%20Cricket%20Kits" target="_blank" rel="noopener" class="btn btn-red" style="padding: 14px 24px; font-size: 13px;">💬 Enquire cricket kits on WhatsApp</a>
+    </div>
+
+    <div class="cricket-grid">
+      <div class="tile">
+        <div class="icon-box">🏏</div>
+        <h3 class="h3">English &amp; Kashmir<br>willow bats</h3>
+        <p class="body">Select unbleached Grade 1 to 4 English Willow plus seasoned Grade A Kashmir Willow bats for fast-paced leather and hard tennis play.</p>
+        <div class="spec">Weights: 1140g – 1220g | Full duckbill &amp; convex spines</div>
+      </div>
+      <div class="tile">
+        <div class="icon-box">⚾</div>
+        <h3 class="h3">Match leather &amp; seam balls</h3>
+        <p class="body">Four-piece alum tanned county match balls, day-night pink seam balls, and tournament-grade water-resistant training turf balls.</p>
+        <div class="spec">Hand-stitched 80+ stitches | 156g test spec</div>
+      </div>
+      <div class="tile">
+        <div class="icon-box">⛑️</div>
+        <h3 class="h3">Pro Guard titanium<br>helmets</h3>
+        <p class="body">BS 7928:2013 certified batting helmets with titanium adjustable grilles, extended occipital neck defense, and dual air venting channels.</p>
+        <div class="spec">Impact absorbent EPS inner liner</div>
+      </div>
+      <div class="tile">
+        <div class="icon-box">🦵</div>
+        <h3 class="h3">Ultra-light batting pads</h3>
+        <p class="body">Ergonomic pre-curved knee bolsters with high-density EVA plastazote cane rods. Featherweight profile engineered for sprint speed between wickets.</p>
+        <div class="spec">Breathable instep cushions | Padded straps</div>
+      </div>
+      <div class="tile">
+        <div class="icon-box">🧤</div>
+        <h3 class="h3">High-impact batting gloves</h3>
+        <p class="body">Multi-flex sausage and split finger designs with fiber-shield finger inserts, premium Pittards leather palms, and sweat-absorbing toweling wristbands.</p>
+        <div class="spec">RH &amp; LH available | Youth &amp; senior</div>
+      </div>
+      <div class="tile">
+        <div class="icon-box">🎒</div>
+        <h3 class="h3">Player &amp; junior cricket kits</h3>
+        <p class="body">Complete all-in-one tournament bundles containing bat, pads, gloves, thigh guard, arm guard, helmet, and wheeled heavy-duty cordura kit bag.</p>
+        <div class="spec">Custom club printing available</div>
+      </div>
+    </div>
+
+    <div class="workshop">
+      <div class="left">
+        <div class="icon-box" style="width: 48px; height: 48px;">🔧</div>
+        <div class="txt">
+          <div class="h4">Custom bat knocking &amp; profile balancing lab</div>
+          <div class="p">15,000+ machine stroke knocking, edge rounding, high-grade linseed oiling, extratec sheet fitment, and custom toe-guard sealing available.</div>
+        </div>
+      </div>
+      <a href="https://wa.me/919677056668?text=Workshop%20Slot%20Booking" target="_blank" rel="noopener" class="btn-mini">Book workshop slot</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CATEGORY 2: BADMINTON (Figma: Section - CATEGORY BREAKDOWN 2: BADMINTON SMASH ARENA) ============ -->
+<section class="section" style="background: var(--bg-2);">
+  <div class="container">
+    <div class="cat-head">
+      <div class="txt">
+        <span class="eyebrow" style="color: var(--green);">Aero Rapidity</span>
+        <h2 class="h2">Dominate every rally: badminton equipment</h2>
+        <p class="sub">Yonex, Li-Ning, Victor &amp; SPORTLINE Pro Series. Racquets tuned for blistering smashes and reflex defense.</p>
+      </div>
+      <a href="https://wa.me/919677056668?text=Enquiry:%20Badminton%20Gear" target="_blank" rel="noopener" class="btn-dark btn" style="padding: 14px 24px; font-size: 13px; color: var(--green);">💬 Enquire badminton gear on WhatsApp</a>
+    </div>
+
+    <div class="badminton-grid">
+      <div class="b-card">
+        <div>
+          <div class="tag" style="color: var(--red);">Frame Dynamics</div>
+          <h3 class="h3 title">Pro tournament racquets</h3>
+          <p class="body">Categorized by swing biomechanics: Head-Heavy power bludgeoners (3U/4U), Head-Light fast reflex drivers (5U), and Even-Balance tour all-rounders.</p>
+        </div>
+        <div class="spec-box">Tension rating: up to 35 lbs max</div>
+      </div>
+      <div class="b-card">
+        <div>
+          <div class="tag" style="color: var(--green);">Flight Consistency</div>
+          <h3 class="h3 title">Tournament shuttles</h3>
+          <p class="body">Official Grade 1 Goose feather shuttlecocks with stable parabolic trajectory, along with durable synthetic nylon models (Slow/Medium speed).</p>
+        </div>
+        <div class="spec-box">Tubes of 6 &amp; 12 | Academy bulk crates</div>
+      </div>
+      <div class="b-card">
+        <div>
+          <div class="tag" style="color: var(--text-4);">Foot Dynamics</div>
+          <h3 class="h3 title">Court non-marking shoes</h3>
+          <p class="body">Raw gum rubber outsoles engineered specifically for synthetic and wooden courts. Lateral anti-torsion carbon inserts and heel power cushions.</p>
+        </div>
+        <div class="spec-box">Zero mark guarantee | Cushion power</div>
+      </div>
+      <div class="b-card">
+        <div>
+          <div class="tag" style="color: var(--red);">String Lab Service</div>
+          <h3 class="h3 title">Digital stringing &amp; grip</h3>
+          <p class="body">Computerized constant-pull 6-point stringing with genuine BG65, BG80 Power, Aerobite, and Exbolt. Sweat absorbent super tacky PU overgrips.</p>
+        </div>
+        <div class="spec-box">Same-day store turnaround</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CATEGORY 3: SPORTSWEAR (Figma: Section - CATEGORY BREAKDOWN 3: PERFORMANCE SPORTSWEAR) ============ -->
+<section class="section" style="background: var(--bg);">
+  <div class="container">
+    <div class="cat-head">
+      <div class="txt">
+        <span class="eyebrow">SportFlex™ Microfiber</span>
+        <h2 class="h2">Limitless motion: performance sportswear</h2>
+        <p class="sub">Men's and Women's pro athletic apparel engineered to eliminate sweat saturation, chafing, and fatigue.</p>
+      </div>
+      <a href="https://wa.me/919677056668?text=Enquiry:%20Apparel%20Fitting" target="_blank" rel="noopener" class="btn btn-red" style="padding: 14px 24px; font-size: 13px;">💬 WhatsApp apparel fitting</a>
+    </div>
+
+    <div class="sport-grid">
+      <div class="tile"><div class="icon-box">👕</div><h3 class="h3-sm">Quick-dry tees</h3><p class="body">Laser-perforated micro-mesh jersey panels for instant heat dissipation during intense play.</p></div>
+      <div class="tile"><div class="icon-box">🩳</div><h3 class="h3-sm">Anti-chafe shorts</h3><p class="body">Built-in 4-way stretch compression liners with dedicated smartphone and ball storage pockets.</p></div>
+      <div class="tile"><div class="icon-box">🦿</div><h3 class="h3-sm">Compression wear</h3><p class="body">Graduated muscle compression tops and tights supporting faster venous return and reduced DOMS.</p></div>
+      <div class="tile"><div class="icon-box">🧥</div><h3 class="h3-sm">Pro tracksuits</h3><p class="body">Weatherproof windcheater shells with warm brushed interior fleece for cool early morning practices.</p></div>
+      <div class="tile"><div class="icon-box">🏆</div><h3 class="h3-sm">Custom teamwear</h3><p class="body">Sublimated club jerseys, custom numbers, sponsor decals, and matching training kits for teams.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CATEGORY 4: FOOTWEAR (Figma: Section - CATEGORY BREAKDOWN 4: FOOTWEAR & HIGH-OCTANE ACCESSORIES) ============ -->
+<section class="section" style="background: var(--bg-2);">
+  <div class="container">
+    <div class="cat-head">
+      <div class="txt">
+        <span class="eyebrow">Ground Traction &amp; Recovery</span>
+        <h2 class="h2">Ground grip &amp; armor: footwear &amp; accessories</h2>
+        <p class="sub">Every gram counted. Every step cushioned against harsh turf impacts.</p>
+      </div>
+    </div>
+
+    <div class="grid-4">
+      <div class="tile">
+        <div class="icon-box">👟</div>
+        <h3 class="h3">Metal &amp; rubber spikes</h3>
+        <p class="body">Multi-surface cricket shoes for fast bowlers and agile batsmen. Removable stainless spikes.</p>
+      </div>
+      <div class="tile">
+        <div class="icon-box">🏋️</div>
+        <h3 class="h3">Resistance &amp; mobility</h3>
+        <p class="body">Heavy-duty latex loop bands (15 – 120 lbs), high-density foam rollers, and agility training ladders.</p>
+      </div>
+      <div class="tile">
+        <div class="icon-box">🧳</div>
+        <h3 class="h3">Duffle &amp; kit luggage</h3>
+        <p class="body">Waterproof heavy 1680D nylon tournament wheelie duffles with dedicated bat caves and shoe chambers.</p>
+      </div>
+      <div class="tile">
+        <div class="icon-box">🥤</div>
+        <h3 class="h3">Bottles, shakers &amp; wraps</h3>
+        <p class="body">Insulated vacuum athletic bottles (1L/2L), protein shaker cups, sports tape, and blister guards.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROMO BANNER (Figma: Section - PROMOTIONAL HERO BANNER / SPECIAL OFFERS) ============ -->
+<section class="section" style="background: var(--bg); padding-top: 40px; padding-bottom: 40px;">
+  <div class="container">
+    <div class="promo-wrap">
+      <div class="promo-content">
+        <span class="promo-tag">Bulk academy concession</span>
+        <h2 class="h2 promo-title">Up to 35% off for<br>academies &amp; clubs</h2>
+        <p class="promo-desc">Supplying tournament kits, customized uniforms, match balls, and training gear to top cricket academies, badminton institutes, corporate sports teams, and schools across India.</p>
+        <div class="promo-ctas">
+          <a href="https://wa.me/919677056668?text=Bulk%20Institutional%20Quote" target="_blank" rel="noopener" class="btn btn-red">Get bulk institutional quote</a>
+          <!-- Free audit button (Cashfree payment link) -->
+          <a href="https://payments.cashfree.com/forms/getaudit" target="_blank" rel="noopener" class="btn btn-outline">Free audit for ₹1</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY CHOOSE SPORTLINE (Figma: Section - WHY CHOOSE SPORTLINE® (4 FEATURE PILLARS)) ============ -->
+<section class="section" style="background: var(--bg-2);">
+  <div class="container">
+    <div class="why-head">
+      <span class="eyebrow">The Sportline Promise</span>
+      <h2 class="h2">Why elite athletes trust us</h2>
+      <p class="lead">Never settle for compromised knock-offs. Built by athletes, curated for champions.</p>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar">
+        <div class="icon-circle">🛡️</div>
+        <h3 class="h3-sm">100% authentic gear</h3>
+        <p class="p">Every bat, racquet, and footwear box originates directly from verified OEM distributors. Complete authenticity backed by warranty.</p>
+      </div>
+      <div class="pillar">
+        <div class="icon-circle">🎓</div>
+        <h3 class="h3-sm">Pro athlete advisory</h3>
+        <p class="p">Chat directly with licensed cricket coaches and tournament badminton players to select racquet balance and bat grains tailored to your technique.</p>
+      </div>
+      <div class="pillar">
+        <div class="icon-circle">🚚</div>
+        <h3 class="h3-sm">Express nationwide shipping</h3>
+        <p class="p">Shockproof armored packaging for bats and rackets. Tracked express dispatch delivering safely to all Indian states within 2 to 5 business days.</p>
+      </div>
+      <div class="pillar">
+        <div class="icon-circle">💬</div>
+        <h3 class="h3-sm">Human WhatsApp support</h3>
+        <p class="p">No bots. No robotic IVR queues. You get real photos and videos of the exact equipment from our showroom floor prior to packaging.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ENQUIRY FORM + CONTACT (Figma: Section - INTERACTIVE WHATSAPP ENQUIRY & CONTACT ZONE) ============ -->
+<section class="section" id="enquiry" style="background: var(--bg);">
+  <div class="container contact-grid">
+
+    <div class="enquiry">
+      <div class="enq-head">
+        <span class="eyebrow green">Live Inventory Desk</span>
+        <div class="h3-big">Generate instant WhatsApp enquiry</div>
+        <p>Share your details and our team will get back to you with live stock and pricing.</p>
+      </div>
+
+      <form class="enquiry-form" id="enquiryForm" novalidate>
+        <div class="form-row">
+          <div class="field">
+            <label for="name">Your name</label>
+            <input type="text" id="name" name="name" placeholder="e.g. Rahul Sharma" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" autocomplete="tel" required>
+        </div>
+
+        <div class="form-msg" id="formMsg" role="status" aria-live="polite"></div>
+
+        <button type="submit" class="btn btn-green btn-submit" id="submitBtn">Submit enquiry</button>
+      </form>
+    </div>
+
+    <div class="concierge">
+      <div>
+        <div class="eyebrow">Flagship stores &amp; workbench</div>
+        <div class="c-title" style="margin-top: 4px;">Talk to our expert athletes</div>
+      </div>
+
+      <div class="c-list">
+        <div class="c-item">
+          <div class="ico">💬</div>
+          <div>
+            <div class="c-label">Direct line / WhatsApp</div>
+            <a href="https://wa.me/919677056668" target="_blank" rel="noopener" class="c-value" style="display: block;">+91 96770 56668</a>
+          </div>
+        </div>
+        <div class="c-item">
+          <div class="ico">🕘</div>
+          <div>
+            <div class="c-label">Store &amp; live support working hours</div>
+            <div class="c-text">Monday to Sunday: 09:00 AM – 09:30 PM IST</div>
+            <div class="c-note">Open 7 days a week for athletes</div>
+          </div>
+        </div>
+        <div class="c-item">
+          <div class="ico">📍</div>
+          <div>
+            <div class="c-label">Arena showroom &amp; experience center</div>
+            <div class="c-text">SPORTLINE Pro Athletic Sanctuary, Outer Ring Road, Indiranagar, Bangalore, Karnataka 560038</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="socials">
+        <div class="lbl">Follow our performance feed</div>
+        <div class="social-row">
+          <a href="https://wa.me/919677056668" target="_blank" rel="noopener" class="social green">WhatsApp</a>
+          <a href="#" class="social">Instagram</a>
+          <a href="#" class="social">YouTube</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  // Google Apps Script web app URL (from Step 2)
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxGmDdJSCCiVHL6fBy92TmjfDTSuo8cGWRMB_Jat3h-dkXc48zGVGrMSYVLP8hz0Twb/exec";
+
+  const form = document.getElementById("enquiryForm");
+  const submitBtn = document.getElementById("submitBtn");
+  const msg = document.getElementById("formMsg");
+
+  function setMessage(text, type) {
+    msg.textContent = text;
+    msg.className = "form-msg " + (type || "");
+  }
+
+  function showSuccess() {
+    setMessage("Thanks! Your enquiry has been received. Our team will reach out shortly.", "ok");
+    form.reset();
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Submit enquiry";
+  }
+
+  function showError() {
+    setMessage("Something went wrong. Please check your connection and try again.", "err");
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Submit enquiry";
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+
+    if (!name || !email || !phone) {
+      setMessage("Please fill in your name, email and phone.", "err");
+      return;
+    }
+
+    setMessage("", "");
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
+
+    const url = SCRIPT_URL + "?" + new URLSearchParams({ name: name, email: email, phone: phone });
+
+    fetch(url, { method: "GET", mode: "no-cors" })
+      .then(() => showSuccess())
+      .catch(() => showError());
+  });
+</script>
+
+</body>
+</html>
